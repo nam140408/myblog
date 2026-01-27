@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thuật toán Dijkstra</title>
+    <link rel="stylesheet" href="blogcss.css">
+</head>
+<body>
+
+    <nav class="container">
+        <div class="navbar-custom">
+            <span class="brand-text">Nguyễn Anh Minh</span>
+            
+            <ul class="nav-links">
+                <p>LỚP 12 TIN</p>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="intro-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-content">
+                    <div class="post-heading">
+                        <h1>Thuật toán Dijkstra: Tìm đường đi ngắn nhất</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container post-container">
+        <div class="row">
+            <div class="col-content">
+                
+                <p>
+                    <i>Thuật toán Dijkstra</i> là một trong những thuật toán cổ điển để giải quyết bài toán tìm 
+                    đường đi ngắn nhất từ một điểm cho trước tới tất cả các điểm còn lại trong đồ thị có trọng số. 
+                    Trong bài viết này chúng ta cùng tìm hiểu ý tưởng cơ bản của thuật toán Dijkstra.
+                </p>
+                
+                    <!----------------------------------Ý tưởng------------------------------->
+                
+                <h2>Ý tưởng</h2>
+                <p>
+                    Thuật toán Dijkstra có thể giải quyết bài toán tìm đường đi 
+                    ngắn nhất trên đồ thị vô hướng lẫn có hướng miễn là trọng số không âm.
+                </p>
+                <p>
+                    Ý tưởng cơ bản của thuật toán như sau: 
+                </p>
+                <ul>
+                    <li>
+                        <i>Bước 1:</i> Từ đỉnh gốc, khởi tạo khoảng cách tới chính nó là 
+                        0, khởi tạo khoảng cách nhỏ nhất ban đầu tới các đỉnh khác là 
+                        +∞. Ta được danh sách các khoảng cách tới các đỉnh.
+                    </li>
+                    <li>
+                        <i>Bước 2:</i> Chọn đỉnh a có khoảng cách nhỏ nhất trong danh sách này và ghi nhận. 
+                        Các lần sau sẽ không xét tới đỉnh này nữa.
+                    </li>
+                    <li>
+                        <i>Bước 3:</i> Lần lượt xét các đỉnh kề b của đỉnh a. Nếu khoảng cách từ đỉnh gốc tới đỉnh b nhỏ 
+                        hơn khoảng cách hiện tại đang được ghi nhận thì cập nhật giá trị và đỉnh kề a 
+                        vào khoảng cách hiện tại của b.
+                    </li>
+                    <li>
+                        <i>Bước 4:</i> Sau khi xét tất cả đỉnh kề b của đỉnh a. Lúc này ta được danh sách khoảng 
+                        cách tới các điểm đã được cập nhật. Quay lại <i>Bước 2</i> với danh sách này. Thuật toán kết thúc khi 
+                        chọn được khoảng cách nhỏ nhất từ tất cả các điểm.
+                    </li>
+                </ul>
+                <!--------------------------Minh họa----------------------------------------->
+                <h2>Minh họa Thuật toán Dijkstra</h2>
+                <p>
+                    Để dễ dàng hiểu ý tưởng của thuật toán. Chúng ta cùng xem ví dụ với đồ thị vô hướng 
+                    G. Thuật toán Dijkstra sẽ tìm khoảng cách từ đỉnh gốc 
+                    0 tới tất cả các đỉnh còn lại trong đồ thị G. 
+                </p>
+                
+                <img src="G.png" alt="đồ thị G.">
+                
+                <p>
+                    Đầu tiên, khởi tạo khoảng cách nhỏ nhất ban đầu tới các đỉnh khác là 
+                    +∞ và khoảng cách tới đỉnh gốc là 0. Ta được danh sách các khoảng cách tới các đỉnh.
+                </p>
+                
+                
+                <img src="TL.png" alt="Khởi tạo">
+
+                <p>
+                   Chọn đỉnh 0 có giá trị nhỏ nhất, xét các đỉnh kề của đỉnh 0: Xét đỉnh 1, 
+                   khoảng cách từ gốc đến đỉnh 1 là 2.5 < ∞ nên ghi nhận giá trị mới là (2.5,0) 
+                   (nghĩa là khoảng cách đến đỉnh gốc hiện tại ghi nhận là 2.5, đỉnh kề liền trước 
+                   là đỉnh 0). Xét tương tự cho đỉnh 2 và 3, ta được dòng thứ 2 trong bảng.
+                </p>
+                
+                <img src="B1.png" alt="Khởi tạo">
+
+                <p>
+                    Sau khi xét tất cả các đỉnh ta chọn đỉnh 2 có khoảng cách nhỏ nhất và ghi nhận để xét tiếp. 
+                    Tiếp tục xét đỉnh kề của 2 là đỉnh 4 và 5 với nguyên tắc nêu ở trên. Xét đỉnh 4, khoảng cách từ đỉnh gốc 
+                    đến đỉnh 4 sẽ bằng khoảng cách từ đỉnh gốc tới đỉnh 2 cộng khoảng cách từ 2 đến 4. Nghĩa là 
+                    2.0+0.6=2.6 nên ta ghi nhận khoảng cách tại đỉnh 4 là (2.6,2). Xét tương tự cho đỉnh 5.
+                </p>
+
+                <img src="B2.png" alt="Tiếp">
+
+                <p>
+                    Lúc này ta chọn được đỉnh 3 có khoảng cách nhỏ nhất, xét đỉnh kề của đỉnh 3 là đỉnh 5. Khoảng cách từ gốc tới đỉnh 
+                    5 = 2.1 + 2.5 = 4.6 lớn hơn khoảng cách hiện tại được ghi nhận, vì vậy giá trị tại đỉnh 5 không đổi.
+                </p>
+
+                
+                <img src="B3.png" alt="Tiếp">
+
+                <p>
+                    Đỉnh 1 là đỉnh được chọn tiếp theo, xét đỉnh kề của 1 là đỉnh 4. 
+                    Khoảng cách từ đỉnh gốc không nhỏ hơn khoảng cách hiện tại nên ta không cập nhật gì ở đỉnh này.
+                </p>
+
+                <img src="B4.png" alt="Tiếp">
+
+                <p>
+                    Sau khi xét xong ta chọn được đỉnh 4 là đỉnh tiếp theo. Ta cập nhật giá trị mới cho đỉnh 6.
+                </p>
+                
+                <img src="B5.png" alt="Tiếp">
+
+                <p>
+                    Chọn được đỉnh 5 là đỉnh nhỏ nhất, tiếp tục xét các đỉnh kề.
+                </p>
+
+                <img src="B6.png" alt="Tiếp">
+
+                <p>
+                    Đỉnh 6 là đỉnh tiếp theo được chọn.
+                </p>
+                
+                <img src="B7.png" alt="Tiếp">
+
+                <p>
+                    Chọn đỉnh có khoảng cách nhỏ nhất là đỉnh 7.
+                </p>
+                
+                <img src="B8.png" alt="Cuối">
+
+                <p>
+                    Thuật toán kết thúc khi chọn được khoảng cách nhỏ nhất cho tất cả các đỉnh.
+                </p>
+                
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="container">
+    <div class="row">
+        <div class="col-content">
+            <section class="comment-section">
+                <div class="divider"></div>
+                <h2 class="post-title">Để lại bình luận</h2>
+                <form class="comment-form">
+                    <input type="email" placeholder="Email của bạn" required class="comment-input">
+                    <textarea placeholder="Nội dung bình luận..." required class="comment-textarea"></textarea>
+                    <button type="button" class="submit-btn" onclick="alert('Cảm ơn bạn đã để lại bình luận!')">Gửi bình luận</button>
+                </form>
+            </section>
+        </div>
+    </div>
+    <footer>
+        <div class="container">
+            <p class="copyright">Copyright &copy; Nguyễn Anh Minh 2026</p>
+        </div>
+    </footer>
+</div>
+</body>
+</html>

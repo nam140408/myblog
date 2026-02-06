@@ -1,0 +1,75 @@
+/* MAIN CONTENT LAYOUT */
+.content-area {
+    padding: 60px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.post {
+    max-width: 800px;
+    width: 100%;
+}
+
+.post-header {
+    font-family: "Times New Roman", Times, serif; 
+    font-size: 2.8rem;
+    font-weight: bold;
+    margin-bottom: 25px;
+    color: #212529;
+    line-height: 1.2;
+}
+
+.post-summary {
+    font-style: italic;
+    color: #6c757d;
+    font-size: 1.15rem;
+    margin-bottom: 30px;
+}
+
+.post-subheading {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin: 40px 0 20px 0;
+}
+
+.post-text {
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+/* IMAGES IN POST */
+.post-image {
+    margin: 40px 0;
+    text-align: center;
+}
+
+.post-image img {
+    width: 100%;
+    max-width: 500px;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    display: block;
+    margin: 0 auto;
+}
+
+.post-image p {
+    margin-top: 15px;
+    font-style: italic;
+    color: #666;
+    font-size: 0.95rem;
+}
+
+/* LISTS IN POST */
+.post ul {
+    margin: 20px 0 30px 45px;
+    list-style-type: disc;
+}
+
+.post ul li {
+    margin-bottom: 12px;
+    padding-left: 10px;
+    color: #444;
+}

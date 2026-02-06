@@ -1,0 +1,125 @@
+/* NAVBAR */
+.navbar {
+    background-color: #5d6975;
+    padding: 12px 0;
+}
+
+.nav-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Name {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+}
+
+.logo-icon {
+    border: 1px solid #fff;
+    padding: 2px 8px;
+    margin-right: 10px;
+    border-radius: 2px;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+}
+
+.nav-menu li a {
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+/* HERO SECTION */
+.hero-section {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('back.png'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #fff;
+    padding: 120px 0;
+}
+
+.hero-content { max-width: 600px; }
+
+.hero-title {
+    font-family: "Times New Roman", Times, serif; 
+    font-size: 3.2rem;
+    font-style: italic;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.hero-desc {
+    font-size: 1.25rem;
+    font-weight: 300;
+}
+
+/* COMMENT SECTION */
+.comment-section {
+    margin-top: 50px;
+    padding-top: 30px;
+    border-top: 1px solid #eee;
+    max-width: 800px; 
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.comment-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.comment-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.comment-input, .comment-textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    font-size: 0.95rem;
+    font-family: Arial, sans-serif;
+}
+
+.comment-textarea {
+    min-height: 150px;
+    resize: none; 
+}
+
+.comment-button {
+    align-self: flex-start; 
+    background-color: #444; 
+    color: white;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 3px;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.comment-button:hover { background-color: #222; }
+
+/* FOOTER */
+.site-footer {
+    padding: 25px 0;
+    text-align: center;
+    background-color: #5d6975;
+    color: #d4cbcb;
+    font-size: 0.85rem;
+    margin-top: 40px;
+}

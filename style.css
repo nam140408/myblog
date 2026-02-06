@@ -1,0 +1,263 @@
+/* RESET CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* Sử dụng Segoe UI (Windows) hoặc Helvetica/Arial làm font chính */
+    font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #ffffff;
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* NAVBAR */
+.navbar {
+    background-color: #5d6975;
+    padding: 12px 0;
+}
+
+.nav-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+}
+
+.logo-icon {
+    border: 1px solid #fff;
+    padding: 2px 8px;
+    margin-right: 10px;
+    border-radius: 2px;
+}
+.post-text {
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.image-container {
+    margin: 30px 0;
+    text-align: center;
+}
+
+.post-img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.img-caption {
+    font-size: 0.9rem;
+    color: #6c757d;
+    font-style: italic;
+    margin-top: 10px;
+}
+
+strong {
+    color: #212529;
+}
+.nav-menu {
+    list-style: none;
+    display: flex;
+}
+
+.nav-menu li a {
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+/* Khung chứa ảnh */
+.post-image {
+    margin: 40px 0;
+    text-align: center;
+}
+
+.post-image img {
+    width: 100%;           /* Chiều rộng chiếm hết khung bài viết */
+    max-width: 500px;      /* Giới hạn chiều rộng tối đa */
+    aspect-ratio: 16 / 9;  /* ÉP TẤT CẢ ẢNH VỀ TỈ LỆ 16:9 */
+    object-fit: cover;     /* Cắt ảnh thông minh để không bị méo, lấy phần trung tâm */
+    object-position: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    display: block;
+    margin: 0 auto;
+}
+
+.post-image p {
+    margin-top: 15px;
+    font-style: italic;
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+/* Sửa lỗi danh sách ul bị lệch */
+.post ul {
+    margin: 20px 0 30px 45px; /* Thụt lề trái đủ rộng để hiện bullet */
+    list-style-type: disc;     /* Đảm bảo hiện dấu chấm tròn */
+}
+
+.post ul li {
+    margin-bottom: 12px;
+    padding-left: 10px;        /* Khoảng cách từ dấu chấm đến chữ */
+    color: #444;
+}
+/* HERO SECTION */
+.hero-section {
+    /* Đường dẫn đến ảnh bạn đã lưu */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('back.png'); 
+    
+    /* Căn chỉnh ảnh */
+    background-size: cover;       /* Ảnh phủ kín toàn bộ khung */
+    background-position: center;  /* Căn giữa ảnh */
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Tạo hiệu ứng cuộn ảnh (parallax) nhẹ, nếu muốn */
+    
+    color: #fff;
+    padding: 120px 0;             /* Tăng padding để khung cao hơn, lộ ảnh rõ hơn */
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.hero-title {
+    /* Thay đổi font cho tiêu đề để tránh lỗi dấu tiếng Việt */
+    font-family: "Times New Roman", Times, serif; 
+    font-size: 3.2rem;
+    font-style: italic;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.hero-desc {
+    font-size: 1.25rem;
+    font-weight: 300;
+}
+
+/* MAIN CONTENT - Nơi sửa lỗi font tiêu đề */
+.content-area {
+    padding: 60px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.post {
+    max-width: 800px;
+    width: 100%;
+}
+
+.post-header {
+    /* Sửa font-family tại đây: Times New Roman hiển thị tiếng Việt tốt hơn Georgia */
+    font-family: "Times New Roman", Times, serif; 
+    font-size: 2.8rem;
+    font-weight: bold;
+    margin-bottom: 25px;
+    color: #212529;
+    line-height: 1.2;
+}
+
+.post-summary {
+    font-style: italic;
+    color: #6c757d;
+    font-size: 1.15rem;
+    margin-bottom: 30px;
+}
+
+.post-subheading {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin: 40px 0 20px 0;
+}
+
+
+/* PHẦN BÌNH LUẬN TỐI GIẢN */
+/* PHẦN BÌNH LUẬN THU NHỎ VÀ CĂN GIỮA */
+.comment-section {
+    margin-top: 50px;
+    padding-top: 30px;
+    border-top: 1px solid #eee;
+    
+    /* Thu hẹp bề ngang */
+    max-width: 800px; 
+    
+    /* Căn giữa so với thẻ cha (article) */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.comment-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: left; /* Tiêu đề vẫn nằm bên trái của khối 550px */
+}
+
+.comment-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.comment-input, .comment-textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    font-size: 0.95rem;
+    box-sizing: border-box; /* Giữ cho input không bị tràn khi có padding */
+    font-family: Arial, sans-serif;
+}
+
+.comment-textarea {
+    min-height: 150px;
+    resize: none; 
+}
+
+.comment-button {
+    /* Đẩy nút gửi ra giữa hoặc giữ bên trái tùy ý bạn */
+    align-self: flex-start; 
+    background-color: #444; 
+    color: white;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 3px;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+}
+
+.comment-button:hover {
+    background-color: #222;
+}
+/* FOOTER ĐÃ BỎ BACK TO TOP */
+.site-footer {
+    padding: 25px 0;
+    text-align: center;
+    background-color: #5d6975;
+    border-top: 1px solid #eee;
+    color: #d4cbcb;
+    font-size: 0.85rem;
+    margin-top: 40px;
+}
